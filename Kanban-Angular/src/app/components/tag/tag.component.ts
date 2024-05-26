@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-tag',
@@ -8,7 +8,17 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
   styleUrl: './tag.component.css'
 })
 export class TagComponent implements OnInit {
-  constructor(private renderer : Renderer2){}
+  @Input() name : string;
+  @Input() user : string;
+  @Input() test : number;
+  @Input() description : string;
+
+  constructor(private renderer : Renderer2){
+    this.name = "Criando algo"
+    this.user = "Sla"
+    this.test = 92
+    this.description = "Criando uma coisa"
+  }
   ngOnInit(): void {
     
     
